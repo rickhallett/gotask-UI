@@ -9,12 +9,11 @@
       <q-input type='email' v-model='email'/>
     </q-field>
 
-    <q-field
-      icon='fingerprint'
-      label='Password'
-    >
+    <q-field icon='fingerprint' label='Password'>
       <q-input type='password' v-model='email'/>
     </q-field>
+
+    <q-btn color='dark' class="q-mt-xl float-right" @click='login'>Login</q-btn>
   </q-page>
 </template>
 
@@ -25,7 +24,11 @@ export default {
     return {
       email: '',
       password: '',
+      loading: false,
     };
+  },
+  methods: {
+    login() {},
   },
 };
 </script>
