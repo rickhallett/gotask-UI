@@ -10,7 +10,7 @@
     </q-field>
 
     <q-field icon='fingerprint' label='Password'>
-      <q-input type='password' v-model='email'/>
+      <q-input type='password' v-model='password'/>
     </q-field>
 
     <q-btn color='dark' class="q-mt-xl float-right" @click='login'>Login</q-btn>
