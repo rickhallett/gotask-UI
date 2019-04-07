@@ -3,14 +3,12 @@
     <q-field
       icon='account_circle'
       label='Email'
-      :error='mailHasError'
-      error-label='We need a valid email'
     >
-      <q-input type='email' v-model='email'/>
+      <q-input type='email' class='q-mt-md' v-model='email'/>
     </q-field>
 
     <q-field icon='fingerprint' label='Password'>
-      <q-input type='password' v-model='password'/>
+      <q-input type='password' class='q-mt-md' v-model='password'/>
     </q-field>
 
     <q-btn color='dark' class="q-mt-xl float-right" @click='login'>Login</q-btn>

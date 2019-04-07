@@ -1,36 +1,25 @@
 <template>
   <q-page padding>
-    <!-- content -->
-    <div class>
-      <div class>
-        <div class>
-          <h2>GoTasks</h2>
-          <ul class>
-            <li class v-for="task in tasks" :key='task.id'>
-              {{ task.name }}
-              <span class>
-                <button class v-on:click="deleteTask(task.id)">
-                  <i class aria-hidden="true"></i>
-                </button>
-              </span>
-            </li>
-          </ul>
-          <div class>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="New Task"
-              v-on:keyup.enter="createTask"
-              v-model="newTask.name"
-            >
-            <span class>
-              <button class type="button" v-on:click="createTask">Create</button>
-            </span>
-          </div>
-          <!-- /input-group -->
-        </div>
-      </div>
-    </div>
+    <q-list highlight >
+      <q-list-header>My Todos</q-list-header>
+      <q-item v-for='task in tasks' :key='task.id'>
+        <q-item-side icon='play_circle_filled'>
+        </q-item-side>
+        <q-item-main>{{ task.name }}</q-item-main>
+        <q-item-side right>
+          <q-item-tile>
+            <q-btn color='red' icon='delete' @click='deleteTask(task.id)'></q-btn>
+          </q-item-tile>
+        </q-item-side>
+      </q-item>
+    </q-list>
+    <q-input
+      prefix='Add todo:'
+      class='q-mt-xl'
+      type='text'
+      v-model='newTask.name'
+    />
+    <q-btn color='green' class='q-mt-xl float-right' @click='createTask'>Add todo</q-btn>
   </q-page>
 </template>
 
@@ -44,7 +33,6 @@ export default {
     };
   },
   created() {
-    // Use the vue-resource $http client to fetch data from the /tasks route
     this.$axios.get('/tasks').then((response) => {
       this.tasks = response.data.items ? response.data.items : [];
     });

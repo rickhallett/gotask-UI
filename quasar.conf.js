@@ -50,6 +50,8 @@ module.exports = ctx => ({
       'QItem',
       'QItemMain',
       'QItemSide',
+      'QItemSeparator',
+      'QItemTile',
       'QField',
       'QInput',
     ],
