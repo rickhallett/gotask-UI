@@ -2,10 +2,13 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MyLayout.vue'),
+    component: () => import('layouts/AppLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: 'error', component: () => import('pages/Error404.vue') },
+      { path: 'home', component: () => import('pages/Index.vue') },
+      { path: 'register', component: () => import('pages/RegisterPage.vue') },
+      { path: 'login', component: () => import('pages/LoginPage.vue') },
+      { path: 'todos', component: () => import('pages/TodosPage.vue') },
+      { path: 'profile', component: () => import('pages/ProfilePage.vue') },
     ],
   },
 ];
