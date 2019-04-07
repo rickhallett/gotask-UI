@@ -61,7 +61,6 @@ export default {
         .put('/tasks', this.newTask)
         .then((response) => {
           this.newTask.id = response.data.created;
-          console.log(this.newTask);
           this.tasks.push(this.newTask);
           this.newTask = {};
         })
@@ -70,13 +69,17 @@ export default {
         });
     },
 
-    deleteTask(index) {
-      // Use the $http client to delete a task by its id
+    deleteTask(id) {
       this.$axios
-        .delete(`/tasks/${this.tasks[index].id}`)
-        .then((response) => {
-          console.log(response);
-          this.tasks.splice(index, 1);
+        .delete(`/tasks/${id}`)
+        .then(() => {
+          this.tasks = this.tasks.filter((v) => {
+            if (v.id !== id) {
+              return v;
+            }
+
+            return false;
+          });
         })
         .catch((error) => {
           console.log(error);
