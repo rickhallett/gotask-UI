@@ -1,7 +1,8 @@
 <template>
   <q-page padding>
     <!-- content -->
-    <h1>Profile</h1>
+    <h3>Profile</h3>
+    <p>Content coming soon..!</p>
   </q-page>
 </template>
 
