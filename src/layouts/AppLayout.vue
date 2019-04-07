@@ -34,24 +34,28 @@
       >
         <q-list-header>Navigation</q-list-header>
         <q-item @click.native="$router.push({ path: 'home' })">
-          <q-item-side icon="school" />
+          <q-item-side icon="home" />
           <q-item-main label="Home" sublabel="" />
         </q-item>
         <q-item @click.native="$router.push({ path: 'register' })">
-          <q-item-side icon="school" />
+          <q-item-side icon="assignment" />
           <q-item-main label="Register" sublabel="" />
         </q-item>
         <q-item @click.native="$router.push({ path: 'login' })">
-          <q-item-side icon="code" />
+          <q-item-side icon="power_settings_new" />
           <q-item-main label="Login" sublabel="" />
         </q-item>
         <q-item @click.native="$router.push({ path: 'todos' })">
-          <q-item-side icon="chat" />
+          <q-item-side icon="calendar_today" /> <!-- // or list -->
           <q-item-main label="My Todos" sublabel="" />
         </q-item>
         <q-item @click.native="$router.push({ path: 'profile' })">
-          <q-item-side icon="record_voice_over" />
+          <q-item-side icon="face" />
           <q-item-main label="My Profile" sublabel="" />
+        </q-item>
+        <q-item @click.native="$router.push({ path: 'logout' })">
+          <q-item-side icon="exit_to_app" />
+          <q-item-main label="Logout" sublabel="" />
         </q-item>
       </q-list>
     </q-layout-drawer>
